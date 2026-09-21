@@ -1,0 +1,109 @@
+name:vijay balaji wankhede
+frn :03july/java/006
+batch : july03
+set : B
+
+q1)Write a program to count number of words in a string.
+    #include<stdio.h>
+int main()
+{
+	char str[5];
+	printf("enter a string: ");
+	scanf("%s",str);
+	for(int i=0;i<5;i++)
+	{
+		printf("%d",i);
+	}
+}
+
+
+
+
+
+q3)
+  #include<stdio.h>
+typedef struct song
+{
+	int id;
+	char title[50];
+	char artist[50];
+	int duration;
+}song;
+void displaysong(song* arr,int count);
+song addsong();
+void main()
+{
+	 song arr[3];
+	 int c=0;
+	while(1)
+{
+	int num;
+	printf("01.add new song\n");
+	printf("02.display song library\n");
+	printf("03break\n");
+	printf("enter your choice:");
+	scanf("%d",&num);
+	if(num==1)
+	{
+		if(c<3)
+	 {
+		
+	   song arr=addsong();
+	   c++;
+     }
+     else
+      {
+      	printf("array is full");
+	  }
+	}
+	else
+	{
+		if(num==2)
+		{
+		   displaysong(arr,2);	
+		}
+		else
+		{
+			if(num==3)
+			{
+				break;
+			}
+			else
+			{
+				printf("invalid number!!");
+				
+		    }
+		}
+	}
+}
+}
+song addsong()
+{
+	song arr;
+	printf("song id: ");
+	scanf("%d",&arr.id);
+	printf("song title:");
+	fflush(stdin);
+	fgets(arr.title,50,stdin);
+	printf("artist:");
+	fflush(stdin);
+	fgets(arr.artist,50,stdin);
+	printf("enter duration:");
+	scanf("%d",&arr.duration);
+	return arr;
+}
+void displaysong(song* arr,int count)
+{
+	printf("display song library\n");
+	for(int i=0;i<count;i++)
+	{
+	  printf("song id:%d\n",arr[i].id);
+	  printf("song title:%s\n",arr[i].title);
+	  printf("song artist:%s\n",arr[i].artist);
+	  printf("song duration:%d\n",arr[i].duration);
+    }
+}
+
+
+
+
